@@ -13,7 +13,7 @@ filtered$Day <- weekdays(filtered$DateTime, abbreviate=TRUE)
 
 png(filename='plot4.png')
 par(mfcol=c(2,2))
-plot(x=filtered$DateTime, y=filtered$Global_active_power, ylab='Global Active Power (kilowatts)', xlab='', type='l')
+plot(x=filtered$DateTime, y=filtered$Global_active_power, ylab='Global Active Power', xlab='', type='l')
 
 plot (filtered$DateTime, filtered$Sub_metering_1,type = "n", xlab = "", ylab = "Energy sub metering")
 lines(filtered$DateTime, filtered$Sub_metering_1, col = 'black')
@@ -22,5 +22,5 @@ lines(filtered$DateTime, filtered$Sub_metering_3, col = 'blue')
 legend('topright', legend=c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'), col=c('black', 'red', 'blue'), lty=c(1,1))
 
 plot(filtered$DateTime, filtered$Voltage, xlab='datetime', ylab='Voltage', type='l')
-plot(x=filtered$DateTime, y=filtered$Global_reactive_power, xlab='datetime', type='l')
+plot(x=filtered$DateTime, y=filtered$Global_reactive_power, xlab='datetime', ylab='Global_reactive_power', type='l')
 dev.off()
